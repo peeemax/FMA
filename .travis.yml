@@ -4,5 +4,8 @@ python:
 install:
   - pip install -r requirements-dev.txt
 script:
-  - flake8
-  - run pytest
+  - run flake8 .
+  - run pytest --cov=project
+
+after_success:
+  - run codecov
